@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>Launch Page</title>
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.a5xBu6ct5xpQRLN6DxAXDwHaHa?rs=1&pid=ImgDetMain">
+    <link rel="stylesheet" type="text/css" href="launch.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+        <div id="hero"> 
+            <div class="navbar">
+                <img src="../Radiance_img/logo.png" class="logo">
+                <div class="user">
+                    <button> Explore </button>
+                    <img src="../Radiance_img/user.png" class="logo">
+                </div>
+            </div>
+            <div class="container">
+                <div class="info">
+                    <h1>DISCOVER</h1>
+                    <p>
+                        Placerat pulvinar aliquam lobortis ut est. Lacinia adipiscing aliquam</p> <p> vulputate tortor fusce est himenaeos. 
+                    </p>
+                    <input type="text" placeholder="search">
+                </div>
+            </div>
+            <div class="slider">
+                <img src="../Radiance_img/left-arrow.png" id="prev">
+                <div class="preview">
+                    <img src="../images/lastofus.jpg" class="thumbnail">
+                    <img src="../images/wallpaper.jpg" class="active thumbnail">
+                    <img src="../images/johnwick.jpg" class="thumbnail">
+                    <img src="../images/themandalorian.jpg" class="thumbnail">
+                    <img src="../images/gta6.jpg" class="thumbnail">
+                </div>
+                <img src="../Radiance_img/right-arrow.png" id="next">
+            </div>
+        </div>
+
+        <script>
+            let hero = document.getElementById('hero');
+            let prev = document.getElementById('prev');
+            let next = document.getElementById('next');
+            let thumbnail = document.querySelector('thumbnail');
+            var backgroundimg = new Array(
+                "../images/lastofus.jpg",
+                "../images/wallpaper.jpg",
+                "../images/johnwick.jpg",
+                "../images/themandalorian.jpg",
+                "../images/gta6.jpg"
+            );
+
+            let i=-1;
+            next.onclick = () =>{
+                
+                ++i;
+                if(i>4)
+                {
+                    i=0;
+                }
+                hero.style.backgroundImage = 'url("'+backgroundimg[i]+'")';
+            }
+            prev.onclick = () =>{
+                --i;
+                if(i<0)
+                {
+                    i=4;
+                }
+                hero.style.backgroundImage = 'url("'+backgroundimg[i]+'")';
+            }
+        </script>
+    </body>
+</html>
